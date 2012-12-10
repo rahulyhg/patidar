@@ -1,0 +1,70 @@
+alter table member_master
+add foreign key (`member_zone`)
+references zone_master(id)
+
+
+alter table lavajam
+add foreign key (`member_no`)
+references member_master(id)
+
+
+alter table jaharat
+add foreign key (`member_no`)
+references member_master(id)
+
+
+alter table jaharat
+add foreign key (`party_no`)
+references party_master(id)
+
+
+alter table jaharat
+add foreign key (`jaharat_type`)
+references jaharat_type_master(id)
+
+alter table avsan
+add foreign key (`member_no`)
+references member_master(id)
+
+alter table expense
+add foreign key (`expense_master_id`)
+references expense_master(id)
+
+alter table expense_master
+add foreign key (`expense_group_id`)
+references expense_group_master(id)
+
+alter table jaherat_avak_table
+add foreign key (`party_id`)
+references party_master(id);
+
+
+
+alter table jaherat_avak_table
+add foreign key (`bank_master_id`)
+references bank_master(id)
+
+alter table avsan_avak_table
+add foreign key (`party_no`)
+references party_master(id);
+
+
+alter table avsan_avak_table
+add foreign key (`bank_master_id`)
+references bank_master(id)
+
+alter table jaherat_wise_avak_table
+add foreign key (`party_no`)
+references party_master(id);
+
+alter table avsan_wise_avak_table
+add foreign key (`party_no`)
+references party_master(id);
+
+alter table bank_slip
+add foreign key (`member_id`)
+references member_master(id)
+
+alter table avsan
+add foreign key (`avsan_size`)
+references rate_master_for_avasan(id)

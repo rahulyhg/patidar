@@ -1,0 +1,5 @@
+.grid-view table.items th {
+  background:#5A9C88 ;
+  color: white;
+  text-align: center;
+}
